@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-demo
+
+#zuul网关配置
+#通过网关访问的url格式：http://zuulHostIp:port//统一前缀/要访问的服务名称/服务中的URL
+zuul:
+  prefix: /api  #指定统一前缀 前缀放在最前面 也就是端口号后面跟上
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes: #自定义配置路由 目的：给服务起个别名来代替当前这个默认的规则
+    query-service: #这个属性key随便写 一般就是服务的名称
+      path: /query/**    #要映射的路径 url中/query/可以代替/query-service/服务
+      serviceId: query-service  #准备转给哪个服务的服务名
+    consumer-demo01:
+      path: /consumer/**
+      serviceId: consumer-demo01
+    add-service:
+      path: /add/**
+      serviceId: add-service
+    update-service:
+      path: /update/**
+      serviceId: update-service
+    delete-service:
+      path: /delete/**
+      serviceId: delete-service
+  #  ignored-services: '*'  #禁止默认路由 *代表禁止所有默认路由规则
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka

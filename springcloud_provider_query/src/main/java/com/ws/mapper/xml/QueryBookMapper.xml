@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ws.mapper.QueryBookMapper">
+
+    <select id="getNumsOfData" resultType="java.lang.Integer">
+        select count(*) from book as b;
+    </select>
+    <select id="getBooksNum" resultType="com.ws.vo.NumsOfBookVo">
+        select b.name ,count(b.name) from book as b group by b.name;
+    </select>
+</mapper>

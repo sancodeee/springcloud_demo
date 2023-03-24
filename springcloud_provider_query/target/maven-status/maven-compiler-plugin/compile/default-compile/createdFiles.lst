@@ -1,0 +1,4 @@
+com\ws\QueryApplication.class
+com\ws\service\impl\QueryBookServiceImpl.class
+com\ws\mapper\QueryBookMapper.class
+com\ws\service\QueryBookService.class

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud_zuul" />
+        <module name="springcloud_provider_update" />
+        <module name="springcloud_eureka_demo01" />
+        <module name="springcloud_provider_query" />
+        <module name="springcloud_provider_add" />
+        <module name="springcloud_provider_delete" />
+        <module name="springcloud_consumer_demo01" />
+        <module name="springcloud_api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="untitled" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud_api" options="-parameters" />
+      <module name="springcloud_consumer_demo01" options="-parameters" />
+      <module name="springcloud_demo" options="-parameters" />
+      <module name="springcloud_eureka_demo01" options="-parameters" />
+      <module name="springcloud_provider_add" options="-parameters" />
+      <module name="springcloud_provider_delete" options="-parameters" />
+      <module name="springcloud_provider_query" options="-parameters" />
+      <module name="springcloud_provider_update" options="-parameters" />
+      <module name="springcloud_zuul" options="-parameters" />
+      <module name="untitled" options="-parameters" />
+    </option>
+  </component>
+</project>

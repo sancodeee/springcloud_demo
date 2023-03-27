@@ -11,5 +11,5 @@ public class NumsOfBookVo {
 
     private String name;
 
-    private Integer num;
+    private String num;
 }

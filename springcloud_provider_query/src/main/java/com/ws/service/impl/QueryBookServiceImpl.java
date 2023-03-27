@@ -66,19 +66,19 @@ public class QueryBookServiceImpl extends ServiceImpl<QueryBookMapper, Book> imp
 
     //查询表中所有数据的条数
     @Override
-    public Integer getNumsOfData(){
+    public Integer getNumsOfData() {
         Integer numsOfData = queryBookMapper.getNumsOfData();
         return numsOfData;
     }
 
     //查询表中各个书相关信息的条数
     @Override
-    public NumsOfBookVo getBookNum() {
-        NumsOfBookVo booksNum = queryBookMapper.getBooksNum();
-        return booksNum;
+    public List<NumsOfBookVo> getBookNum() {
+
+        List<NumsOfBookVo> booksNumList = queryBookMapper.getBooksNum();
+
+        return booksNumList;
     }
-
-
 
 
 }

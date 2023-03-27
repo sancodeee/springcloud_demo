@@ -36,14 +36,16 @@ public class QueryBookController {
     @GetMapping(value = "/getNumsOfData")
     public String getNumsOfData() {
         Integer numsOfData = queryBookService.getNumsOfData();
-        String sum = "表中共有" + numsOfData + "条数据";
+        String sum = "该表中共有" + numsOfData + "条数据";
         return sum;
     }
 
     @ApiOperation(value = "获取各个书籍在表中的相关数据的条数")
     @GetMapping(value = "/getBookNum")
-    public NumsOfBookVo getBookNum() {
-        return queryBookService.getBookNum();
+    public List<NumsOfBookVo> getBookNum() {
+
+        List<NumsOfBookVo> list = queryBookService.getBookNum();
+        return list;
     }
 
 

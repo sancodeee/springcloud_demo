@@ -20,6 +20,6 @@ public interface QueryBookService extends IService<Book> {
     Integer getNumsOfData();
 
     //查询每本书相关信息在表中的条数
-    NumsOfBookVo getBookNum();
+    List<NumsOfBookVo> getBookNum();
 
 }

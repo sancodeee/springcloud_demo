@@ -5,6 +5,8 @@ import com.ws.entity.Book;
 import com.ws.vo.NumsOfBookVo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface QueryBookMapper extends BaseMapper<Book> {
 
@@ -12,6 +14,6 @@ public interface QueryBookMapper extends BaseMapper<Book> {
     Integer getNumsOfData();
 
     //查询各个书籍相关信息的条数
-    NumsOfBookVo getBooksNum();
+    List<NumsOfBookVo> getBooksNum();
 
 }

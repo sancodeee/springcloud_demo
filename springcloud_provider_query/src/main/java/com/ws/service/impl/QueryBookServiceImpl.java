@@ -9,6 +9,7 @@ import com.ws.mapper.QueryBookAndAuthorMapper;
 import com.ws.mapper.QueryBookMapper;
 import com.ws.service.QueryBookService;
 import com.ws.vo.BookAndAuthorVo;
+import com.ws.vo.NumsOfBookVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -21,7 +22,6 @@ import java.util.List;
 @Service
 @Slf4j
 public class QueryBookServiceImpl extends ServiceImpl<QueryBookMapper, Book> implements QueryBookService {
-
 
     @Autowired
     private QueryBookMapper queryBookMapper;
@@ -63,6 +63,22 @@ public class QueryBookServiceImpl extends ServiceImpl<QueryBookMapper, Book> imp
         log.info("字段不能为空!");
         return null;
     }
+
+    //查询表中所有数据的条数
+    @Override
+    public Integer getNumsOfData(){
+        Integer numsOfData = queryBookMapper.getNumsOfData();
+        return numsOfData;
+    }
+
+    //查询表中各个书相关信息的条数
+    @Override
+    public NumsOfBookVo getBookNum() {
+        NumsOfBookVo booksNum = queryBookMapper.getBooksNum();
+        return booksNum;
+    }
+
+
 
 
 }

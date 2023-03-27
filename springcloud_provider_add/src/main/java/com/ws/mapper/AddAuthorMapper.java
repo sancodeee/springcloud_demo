@@ -1,10 +1,9 @@
 package com.ws.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ws.entity.Book;
+import com.ws.entity.Author;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface AddBookMapper extends BaseMapper<Book> {
-
+public interface AddAuthorMapper extends BaseMapper<Author> {
 }

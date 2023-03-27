@@ -65,8 +65,6 @@ w
 Gspringcloud_eureka_demo01/src/main/java/com/ws/EurekaApplication01.java,2\9\297cb579e0652cc43e5f3fcd9edb684deaab0f98
 D
 springcloud_demo.iml,a\c\ac45c05251245152445b16d8531826bfccbca7d9
-}
-Mspringcloud_provider_query/src/main/java/com/ws/mapper/QueryAuthorMapper.java,1\4\149fc16f9eb897c4b1396a29f3e101fac0308558
 y
 Ispringcloud_provider_query/src/main/java/com/ws/config/SwaggerConfig.java,f\6\f647078b2ab83501e945873984dbe28da654113a
 H

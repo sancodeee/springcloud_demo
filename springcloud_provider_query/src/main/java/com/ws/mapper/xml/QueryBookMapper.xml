@@ -10,6 +10,6 @@
         select count(*) from book as b;
     </select>
     <select id="getBooksNum" resultMap="NumsOfBookVo">
-        select b.name ,count(b.name) from book as b group by b.name;
+        select b.name ,count(b.name) from book as b group by b.name order by count(b.name) DESC;
     </select>
 </mapper>

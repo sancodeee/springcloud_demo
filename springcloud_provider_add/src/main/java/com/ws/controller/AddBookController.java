@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
+
 @Slf4j
 @RestController
 @RequestMapping(value = "/book")
@@ -35,7 +37,10 @@ public class AddBookController {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return "添加失败，该id已存在数据库！";
+            if (e instanceof SQLException) {
+                return "添加失败，该id已存在数据库！";
+            }
+            return "添加失败";
         }
     }
 
@@ -52,7 +57,10 @@ public class AddBookController {
         } catch (Exception e) {
             e.printStackTrace();
             log.info("该id已存在！");
-            return "添加失败，该id已存在数据库";
+            if (e instanceof SQLException) {
+                return "添加失败，该id已存在数据库";
+            }
+            return "添加失败";
         }
     }
 

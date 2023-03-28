@@ -1,6 +1,8 @@
 package com.ws.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ws.entity.Author;
 import com.ws.entity.Book;
@@ -32,15 +34,37 @@ public class QueryBookServiceImpl extends ServiceImpl<QueryBookMapper, Book> imp
     @Autowired
     private QueryBookAndAuthorMapper queryBookAndAuthorMapper;
 
+    //查询全部书籍信息
     @Override
     public List<Book> queryAllBook() {
-
         return queryBookMapper.selectList(null);
     }
 
+    //手写分页查询书籍信息
+    @Override
+    public List<Book> getPage(Integer pageNum, Integer pageSize) {
+        pageNum = (pageNum - 1) * pageSize;
+        return queryBookMapper.getPage(pageNum ,pageSize);
+    }
+
+    //分页查询书籍
+    @Override
+    public IPage<Book> getPageBook(Integer pageNum, Integer pageSize) {
+        Page<Book> page = new Page<>(pageNum , pageSize);
+        return queryBookMapper.selectPage(page, null);
+    }
+
+    //查询全部作者信息
     @Override
     public List<Author> queryAllAuthor() {
         return queryAuthorMapper.selectList(null);
+    }
+
+    //分页查询作者信息
+    @Override
+    public IPage<Author> getPageAuthor(Integer pageNum, Integer pageSize) {
+        Page<Author> page = new Page<>(pageNum , pageSize);
+        return queryAuthorMapper.selectPage(page,null);
     }
 
     //通过书名查询书籍详细信息

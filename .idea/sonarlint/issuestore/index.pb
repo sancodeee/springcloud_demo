@@ -43,12 +43,8 @@ w
 Gspringcloud_eureka_demo01/src/main/java/com/ws/EurekaApplication01.java,2\9\297cb579e0652cc43e5f3fcd9edb684deaab0f98
 D
 springcloud_demo.iml,a\c\ac45c05251245152445b16d8531826bfccbca7d9
-y
-Ispringcloud_provider_query/src/main/java/com/ws/config/SwaggerConfig.java,f\6\f647078b2ab83501e945873984dbe28da654113a
 H
 springcloud_zuul/pom.xml,5\c\5ca1e2231ac212a33998b43f367a02fd19294495
-~
-Nspringcloud_provider_query/src/main/java/com/ws/config/SwaggerPrintConfig.java,a\a\aa32e3870aa03df80565281e1b5b5e0b303f7e5c
 j
 :springcloud_zuul/src/main/java/com/ws/ZuulApplication.java,1\2\12beef8054ca713b637ec782d7caa495c66583c6
 q

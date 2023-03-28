@@ -44,7 +44,7 @@ public class AddBookController {
         }
     }
 
-    @ApiOperation(value = "添加书籍作者信息")
+    @ApiOperation(value = "添加作者信息")
     @PostMapping("/addAuthor")
     public String addAuthor(@RequestBody(required = true) Author author) {
         try {

@@ -12,4 +12,7 @@
     <select id="getBooksNum" resultMap="NumsOfBookVo">
         select b.name ,count(b.name) from book as b group by b.name order by count(b.name) DESC;
     </select>
+    <select id="getPage" resultType="com.ws.entity.Book">
+        select * from book limit #{pageNum},#{pageSize};
+    </select>
 </mapper>

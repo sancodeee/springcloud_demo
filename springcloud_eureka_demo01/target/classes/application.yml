@@ -6,10 +6,14 @@ spring:
     name: eureka-demo01
 
 eureka:
+    instance:
+      hostname: eureka8001
+    server:
+      enable-self-preservation: false #自我保护机制 网络稳定的情况下建议关闭，否则可能会出现注册中心有已经失效的实例存在
     client:
       service-url:
-        defaultZone: http://localhost:${server.port}/eureka
+        defaultZone: http://eureka-demo02:8002/eureka,http://eureka-demo03:8003/eureka #该uri中的ip字段可以用服务名称代替
       register-with-eureka: false #是否注册到eureka服务中 不用注册自己到eureka
       fetch-registry: false #是否拉取其他的服务 表示自己就是注册中心 不用去注册中心获取其他服务的地址
-    server:
-      enable-self-preservation: false
+
+

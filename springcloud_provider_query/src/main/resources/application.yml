@@ -10,6 +10,21 @@ spring:
       username: root
       password: 169167866Spl.
       driver-class-name: com.mysql.cj.jdbc.Driver
+  cache:
+    type: redis
+    redis:
+      key-prefix: query
+      time-to-live: 6000  #缓存有效时长ms
+      cache-null-values: true  #是否允许空值
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    timeout: 5000  #连接redis超时时间设置
+    database: 0
+  kafka:
+    #kafka服务器ip
+    bootstrap-servers: localhost:9092
 
 mybatis-plus:
   global-config:
@@ -22,4 +37,4 @@ mybatis-plus:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8001/eureka
+      defaultZone: http://localhost:8001/eureka,http://localhost:8002/eureka,http://localhost:8003/eureka

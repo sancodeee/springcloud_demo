@@ -13,6 +13,8 @@
         <module name="springcloud_provider_query" />
         <module name="springcloud_provider_add" />
         <module name="springcloud_provider_delete" />
+        <module name="springcloud_eureka_demo02" />
+        <module name="springcloud_eureka_demo03" />
         <module name="springcloud_consumer_demo01" />
         <module name="springcloud_api" />
       </profile>
@@ -27,6 +29,8 @@
       <module name="springcloud_consumer_demo01" options="-parameters" />
       <module name="springcloud_demo" options="-parameters" />
       <module name="springcloud_eureka_demo01" options="-parameters" />
+      <module name="springcloud_eureka_demo02" options="-parameters" />
+      <module name="springcloud_eureka_demo03" options="-parameters" />
       <module name="springcloud_provider_add" options="-parameters" />
       <module name="springcloud_provider_delete" options="-parameters" />
       <module name="springcloud_provider_query" options="-parameters" />

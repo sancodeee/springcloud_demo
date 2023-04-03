@@ -16,8 +16,9 @@
         <module>springcloud_consumer_demo01</module>
         <module>springcloud_provider_add</module>
         <module>springcloud_provider_update</module>
-        <module>untitled</module>
         <module>springcloud_provider_delete</module>
+        <module>springcloud_eureka_demo02</module>
+        <module>springcloud_eureka_demo03</module>
     </modules>
 
     <!--  确定springboot版本  -->

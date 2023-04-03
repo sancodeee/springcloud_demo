@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -68,6 +69,7 @@ public class QueryBookServiceImpl extends ServiceImpl<QueryBookMapper, Book> imp
     }
 
     //通过书名查询书籍详细信息
+    @Cacheable(value = "queryByName" , key = "#name")
     @Override
     public List<BookAndAuthorVo> queryByName(String name) {
         if (StringUtils.isNotBlank(name)) {

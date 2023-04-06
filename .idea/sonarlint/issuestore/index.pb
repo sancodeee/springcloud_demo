@@ -33,8 +33,6 @@ Ospringcloud_provider_delete/src/main/java/com/ws/service/DeleteBookService.java
 Mspringcloud_provider_delete/src/main/java/com/ws/mapper/DeleteBookMapper.java,a\f\afc1155fae94352551652ddf9c074a2f8f6c7c95
 €
 Pspringcloud_provider_delete/src/main/java/com/ws/mapper/xml/DeleteBookMapper.xml,1\b\1b361b2ef42b3645b142fa60138afcb715cb5aff
-ƒ
-Sspringcloud_provider_query/src/main/java/com/ws/controller/QueryBookController.java,6\7\675ec56fa609a053b96da65620ee371ff59b9eee
 w
 Gspringcloud_eureka_demo01/src/main/java/com/ws/EurekaApplication01.java,2\9\297cb579e0652cc43e5f3fcd9edb684deaab0f98
 q
@@ -63,8 +61,6 @@ Uspringcloud_provider_delete/src/main/java/com/ws/controller/DeleteBookControlle
 Kspringcloud_provider_delete/src/main/java/com/ws/DeleteBookApplication.java,7\c\7c4f1e91f54c2fe5e68e9090afbfc73e3b6c0e10
 Q
 !springcloud_eureka_demo02/pom.xml,6\c\6c2112fd57a6889e5b9f9e981fd8fcf782d77a81
-†
-Vspringcloud_provider_query/src/main/java/com/ws/service/impl/QueryBookServiceImpl.java,d\7\d7d2a064f05fb588ab182aebc4bef303c9183acb
 Q
 !springcloud_eureka_demo01/pom.xml,9\b\9b5118ea3ace09bc359dddf13491ba91a5590162
 w

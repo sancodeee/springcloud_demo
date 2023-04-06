@@ -3,6 +3,7 @@ package com.ws.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ws.entity.Author;
 import com.ws.entity.Book;
+import com.ws.producer.KafkaQueryProducerApi;
 import com.ws.service.QueryBookService;
 import com.ws.vo.BookAndAuthorVo;
 import com.ws.vo.NumsOfBookVo;
@@ -23,11 +24,24 @@ public class QueryBookController {
     @Autowired
     private QueryBookService queryBookService;
 
+    @Autowired
+    private KafkaQueryProducerApi kafkaQueryProducerApi;
+
 
     @ApiOperation(value = "查询全部书籍")
     @GetMapping(value = "/queryAll")
     public List<Book> queryAll() {
         return queryBookService.queryAllBook();
+    }
+
+    @ApiOperation(value = "将请求添加到消息队列后查询")
+    @GetMapping("kafkaQueryAll")
+    public List<Book> kafkaQueryAll(){
+        //往消息队列中添加该请求
+        kafkaQueryProducerApi.queryAllProducer();
+        //消费完毕后拿到返回值
+
+        return null;
     }
 
     @ApiOperation(value = "分页查询全部书籍信息手写")
@@ -57,7 +71,6 @@ public class QueryBookController {
         return queryBookService.getPageAuthor(pageNum, pageSize);
     }
 
-
     @ApiOperation(value = "根据书名查询书籍详细信息")
     @GetMapping(value = "/queryBookInfoByName")
     public List<BookAndAuthorVo> queryBookInfoByName(String name) {
@@ -76,6 +89,5 @@ public class QueryBookController {
     public List<NumsOfBookVo> getBookNum() {
         return queryBookService.getBookNum();
     }
-
 
 }

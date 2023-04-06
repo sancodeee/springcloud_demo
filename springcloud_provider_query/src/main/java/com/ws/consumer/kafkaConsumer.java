@@ -1,44 +1,26 @@
 package com.ws.consumer;
 
-import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
-import org.springframework.kafka.listener.ListenerExecutionFailedException;
 import org.springframework.kafka.support.Acknowledgment;
-import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+//用于消费controller层传来的消息
 @Component
 public class kafkaConsumer {
-
 
     @KafkaListener(topics = {"query-topic"}, groupId = "${spring.kafka.consumer.group-id}", errorHandler = "dealError", concurrency = "2")
     public void consumer(ConsumerRecord<?, ?> record, Acknowledgment ack) {
         //手动确认
-        ack.acknowledge();
+//        ack.acknowledge();
+        //Optional类是为了解决NullPointException异常而设计的，用来处理可能为空的对象，优雅的处理空指针异常
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         kafkaMessage.ifPresent(message -> {
             System.out.println("开始消费：" + message);
         });
-//        ack.acknowledge();
-    }
-
-
-    //因为手动确认，若消费失败，记录重刷
-    @Bean
-    public ConsumerAwareListenerErrorHandler dealError() {
-        return new ConsumerAwareListenerErrorHandler() {
-            @Override
-            public Object handleError(Message<?> message, ListenerExecutionFailedException e, Consumer<?, ?> consumer) {
-                System.out.println("consumer error" + e);
-                // TODO 将失败的记录保存到数据库，再用定时任务查询记录，并重刷数据
-                return null;
-            }
-        };
+        ack.acknowledge();
     }
 
 

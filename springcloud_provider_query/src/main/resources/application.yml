@@ -23,8 +23,18 @@ spring:
     timeout: 5000  #连接redis超时时间设置
     database: 0
   kafka:
-    #kafka服务器ip
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: localhost:9092   #kafka地址
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer  #序列化方式
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: query_consumer_group  #群组id
+      enable-auto-commit: false   #取消自动提交
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      ack-mode: manual_immediate  #手动提交
 
 mybatis-plus:
   global-config:

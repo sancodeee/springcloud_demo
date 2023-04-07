@@ -20,7 +20,7 @@ public class BookController {
 
     //查询全部
     @GetMapping(value = "/queryAll")
-    public List queryAll() {
+    public List<Book> queryAll() {
         String url = QUERY_SERVICE_NAME + "/book/queryAll";
         List bookList = restTemplate.getForObject(url, List.class);
         return bookList;

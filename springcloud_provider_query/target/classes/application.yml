@@ -23,16 +23,20 @@ spring:
     timeout: 5000  #连接redis超时时间设置
     database: 0
   kafka:
-    bootstrap-servers: localhost:9092   #kafka地址
-    producer:
+    bootstrap-servers: localhost:9092   #kafka的broker地址，格式为host:port，可以配置多个，用“,”隔开
+    producer:   #生产者配置
       key-serializer: org.apache.kafka.common.serialization.StringSerializer  #序列化方式
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    consumer:
-      group-id: query_consumer_group  #群组id
+    consumer:   #消费者配置
+#      client-id:  #发出请求时传递给服务器的ID，用于服务器端日志记录，不设置时，系统会自动生成
+      group-id: query_consumer_group  #当前消费者所在的群组名称
       enable-auto-commit: false   #取消自动提交
-      auto-commit-interval: 1000
+      auto-commit-interval: 1000   #当消费者的消费记录是后台提交时，多久自动提交一次
+#      auto-offset-reset:     #当kafka中没有初试偏移量或服务器上不再存在当前偏移量时该怎么办 earliest：自动将偏移量重置为最早的偏移量；latest：自动将偏移量重置为最迟的偏移量；none：如果未找到消费者组的先前偏移量，则将异常抛出给消费者 exception：向消费者抛出异常；
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+
     listener:
       ack-mode: manual_immediate  #手动提交
 

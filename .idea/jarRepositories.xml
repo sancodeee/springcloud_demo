@@ -59,6 +59,11 @@
     <remote-repository>
       <option name="id" value="spring-milestones" />
       <option name="name" value="Spring Milestones" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-milestones" />
+      <option name="name" value="Spring Milestones" />
       <option name="url" value="https://repo.spring.io/milestone" />
     </remote-repository>
     <remote-repository>
@@ -75,6 +80,11 @@
       <option name="id" value="public-releases" />
       <option name="name" value="public-releases" />
       <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public" />
     </remote-repository>
   </component>
 </project>

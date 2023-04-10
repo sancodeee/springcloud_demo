@@ -41,6 +41,7 @@ public class QueryBookController {
         kafkaQueryProducerApi.queryAllProducer();
         //消费完毕后拿到返回值
 //        List<Book> bookList = kafkaQueryProducerApi.queryAllReturn(record, ack);
+        log.info("11111111111111");
         return null;
     }
 

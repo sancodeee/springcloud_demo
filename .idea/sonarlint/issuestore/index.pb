@@ -1,8 +1,6 @@
 
 G
 springcloud_api/pom.xml,a\a\aa65e511a26971c5799f1377b1687bbeff002755
-ù
-m.idea/dataSources/0accac24-d417-4f9e-88a9-6dc639986c33/storage_v2/_src_/schema/information_schema.FNRwLQ.meta,e\e\ee9362fd262bebf941f8939e488996c063ec18a2
 e
 5springcloud_api/src/main/java/com/ws/entity/Book.java,4\f\4f41c73d6fcf9658f1ff116b6fe2d6f399a9213f
 \
@@ -17,8 +15,6 @@ Mspringcloud_provider_update/src/main/java/com/ws/mapper/UpdateBookMapper.java,
 Pspringcloud_provider_update/src/main/java/com/ws/mapper/xml/UpdateBookMapper.xml,5\8\58462fd0830a8719cc065a5ff29fdd851cd33272
 
 Ospringcloud_provider_update/src/main/java/com/ws/service/UpdateBookService.java,7\4\744c266cb7666b4b9902caebb9a3580e09303403
-j
-:.idea/dataSources/0accac24-d417-4f9e-88a9-6dc639986c33.xml,8\b\8b23e803c30676a493e9babdc7c00c7688fdad0f
 H
 springcloud_zuul/pom.xml,5\c\5ca1e2231ac212a33998b43f367a02fd19294495
 j
@@ -83,3 +79,7 @@ y
 Ispringcloud_provider_query/src/main/java/com/ws/utils/TypeConverUtil.java,b\a\ba86f238d80323c0c3c85ff44d3a78897097ac96
 
 Ospringcloud_consumer_demo01/src/main/java/com/ws/config/RestTemplateConfig.java,6\9\698bd3ec0ee8f5599c739db3097569cc08411c3e
+r
+Bspringcloud_provider_query/src/main/java/com/ws/entity/Author.java,f\5\f5f8e02c6ed17a5fda5c34d5655fc6031702bdd8
+p
+@springcloud_provider_query/src/main/java/com/ws/entity/Book.java,6\4\64eceee402addfaa873708fbeebedbef003f28ac

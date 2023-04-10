@@ -19,8 +19,6 @@ Pspringcloud_provider_update/src/main/java/com/ws/mapper/xml/UpdateBookMapper.xm
 Ospringcloud_provider_update/src/main/java/com/ws/service/UpdateBookService.java,7\4\744c266cb7666b4b9902caebb9a3580e09303403
 j
 :.idea/dataSources/0accac24-d417-4f9e-88a9-6dc639986c33.xml,8\b\8b23e803c30676a493e9babdc7c00c7688fdad0f
-D
-springcloud_demo.iml,a\c\ac45c05251245152445b16d8531826bfccbca7d9
 H
 springcloud_zuul/pom.xml,5\c\5ca1e2231ac212a33998b43f367a02fd19294495
 j

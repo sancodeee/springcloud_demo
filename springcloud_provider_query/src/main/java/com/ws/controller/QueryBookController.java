@@ -43,7 +43,7 @@ public class QueryBookController {
         kafkaQueryProducerApi.queryAllProducer();
         //消费完毕后拿到返回值
         List<String> stringList = kafkaQueryProducerApi.getReturn();
-        log.info("控制层拿到返回值：{}",stringList);
+        log.info("控制层拿到返回值：{}", stringList);
         return stringList;
     }
 

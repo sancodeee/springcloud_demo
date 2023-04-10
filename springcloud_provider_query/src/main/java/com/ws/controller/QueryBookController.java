@@ -38,13 +38,13 @@ public class QueryBookController {
 
     @ApiOperation(value = "将请求添加到消息队列后查询")
     @GetMapping("kafkaQueryAll")
-    public List<Book> kafkaQueryAll() {
+    public List<String> kafkaQueryAll() {
         //往消息队列中添加该请求
         kafkaQueryProducerApi.queryAllProducer();
         //消费完毕后拿到返回值
-//        List<Book> bookList = kafkaQueryProducerApi.queryAllReturn(record, ack);
-        log.info("11111111111111");
-        return null;
+        List<String> stringList = kafkaQueryProducerApi.getReturn();
+        log.info("控制层拿到返回值：{}",stringList);
+        return stringList;
     }
 
     @ApiOperation(value = "分页查询全部书籍信息手写")

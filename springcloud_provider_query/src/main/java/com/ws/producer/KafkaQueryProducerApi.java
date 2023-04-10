@@ -18,12 +18,20 @@ import java.util.Optional;
 @Slf4j
 public class KafkaQueryProducerApi {
 
+    //存储kafka中的值
+    private List<String> list;
+
     private final static String TOPIC_QUERY = "topic_query";
 
     private final static String TOPIC_QUERY_RETURN = "topic_query_return";
 
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
+
+    public List<String> getReturn() {
+        List stringList = this.list;
+        return stringList;
+    }
 
     //发送请求到消费者处理
     public String queryAllProducer() {
@@ -34,7 +42,7 @@ public class KafkaQueryProducerApi {
 
     //接收消费者消费后 返回的返回值
     @KafkaListener(topics = {TOPIC_QUERY_RETURN}, groupId = "${spring.kafka.consumer.group-id}", errorHandler = "dealError", concurrency = "2")
-    public List<String> queryAllReturn(ConsumerRecord<?, ?> record, Acknowledgment ack) {
+    public void queryAllReturn(ConsumerRecord<?, ?> record, Acknowledgment ack) {
         ack.acknowledge();//手动确认
         Optional<?> value = Optional.ofNullable(record.value());
         if (value.isPresent()) {
@@ -43,10 +51,10 @@ public class KafkaQueryProducerApi {
             List<String> list = Arrays.asList(s);
 //            List<Book> bookList = list.stream().map(s1 -> JSON.parseObject(s1, Book.class)).collect(Collectors.toList());  //通过stream的方式将List<String>转换成List<Book>
             log.info("从返回队列中获得的值：" + list);
-            return list;
+            this.list = list;
         } else {
             log.error("对象不能为空");
-            return null;
+
         }
     }
 

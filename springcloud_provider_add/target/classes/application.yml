@@ -22,4 +22,4 @@ mybatis-plus:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-demo01:8001/eureka,http://eureka-demo02:8002/eureka,http://eureka-demo03:8003/eureka
+      defaultZone: http://localhost:8001/eureka,http://localhost:8002/eureka,http://localhost:8003/eureka

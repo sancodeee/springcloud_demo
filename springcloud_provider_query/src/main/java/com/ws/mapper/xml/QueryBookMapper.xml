@@ -2,17 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ws.mapper.QueryBookMapper">
     <resultMap id="NumsOfBookVo" type="com.ws.vo.NumsOfBookVo">
-        <result property="name" column="name" />
-        <result property="num" column="count(b.name)" />
+        <result property="name" column="name"/>
+        <result property="num" column="count(b.name)"/>
     </resultMap>
 
     <select id="getNumsOfData" resultType="java.lang.Integer">
-        select count(*) from book as b;
+        select count(*)
+        from book as b;
     </select>
     <select id="getBooksNum" resultMap="NumsOfBookVo">
-        select b.name ,count(b.name) from book as b group by b.name order by count(b.name) DESC;
+        select b.name, count(b.name)
+        from book as b
+        group by b.name
+        order by count(b.name) DESC;
     </select>
     <select id="getPage" resultType="com.ws.entity.Book">
-        select * from book limit #{pageNum},#{pageSize};
+        select *
+        from book limit #{pageNum},#{pageSize};
     </select>
 </mapper>

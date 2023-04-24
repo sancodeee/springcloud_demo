@@ -83,3 +83,5 @@ r
 Bspringcloud_provider_query/src/main/java/com/ws/entity/Author.java,f\5\f5f8e02c6ed17a5fda5c34d5655fc6031702bdd8
 p
 @springcloud_provider_query/src/main/java/com/ws/entity/Book.java,6\4\64eceee402addfaa873708fbeebedbef003f28ac
+ƒ
+Sspringcloud_provider_query/src/main/java/com/ws/controller/QueryBookController.java,6\7\675ec56fa609a053b96da65620ee371ff59b9eee
